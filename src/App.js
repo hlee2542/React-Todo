@@ -37,7 +37,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <TodoForm input={this.state.input} update={this.handleChange.bind(this)}/>
+        <TodoForm input={this.state.input} update={this.handleChange.bind(this)} addTodo={this.addTodo.bind(this)}/>
         <button onClick={this.addTodo.bind(this)}>Add Todo</button>
         <button onClick={this.clear.bind(this)}>Clear Completed</button>
         <TodoList list={this.state.notes} makeCompleted={this.makeCompleted.bind(this)}/>

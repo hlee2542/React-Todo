@@ -7,7 +7,11 @@ class TodoForm extends React.Component {
     render() {
         return (
             <div>
-                <form>
+                <form onSubmit={(event) => {
+                        event.preventDefault();
+                        this.props.addTodo();
+                    }
+                }>
                     <h1>Todo List</h1>
                     <input type='text' placeholder='Type in something to do.' value={this.props.input} onChange={event => this.props.update(event.target.value)}/>
                 </form>
